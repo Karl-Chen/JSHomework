@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+         switch
+        */ 
+        /* payType :
+        a: 信用卡付款
+        b: 現金付款
+        c: 轉帳付款
+        d: LINE PAY付款
+        e: 貨到付款
+        */
+        var payType = "a";
+        var showStr = "";
+        switch(payType)
+        {
+            case "a":
+                showStr = "信用卡付款";
+                break;
+            case "b":
+                showStr = "現金付款";
+                break;
+            case "c":
+                showStr = "轉帳付款";
+                break;
+            case "d":
+                showStr = "LINE PAY付款";
+                break;
+            case "e":
+                showStr = "貨到付款";
+                break;
+            default:
+                showStr = "請你輸入a, b, c, d, e的其中一個字母";
+                break;
+        }
+        document.write(showStr);
+        document.write("<hr>");
+
+
+        // score 90+ 優等 80~89 甲等，直接把分數 / 10，取整數，用整數去做switch case
+        var source = 5;
+        if (source < 0 && source > 100)
+        {
+            showStr = "請輸入0~100的數字";
+        }
+        else
+        {
+            source /= 10;
+            source = parseInt(source);
+
+            switch(source)
+            {
+                case 10:
+                case 9:
+                    showStr = "優等";
+                    break;
+                case 8:
+                    showStr = "甲等";
+                    break;
+                case 7:
+                    showStr = "乙等";
+                    break;
+                case 6:
+                    showStr = "丙等";
+                    break;
+                default:
+                    showStr = "丁等";
+                    break;
+            }
+        }
+        document.write(showStr);
+        document.write("<br>");
+
+
+
+    </script>
+</body>
+</html>

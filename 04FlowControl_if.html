@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // if 敘述句
+        /*
+        + - * / 算數運算(最優先)
+        = 指定運算
+        > < == != <= >= 比較運算
+        || && ! 邏輯運算 (優先權如下： ! > && > ||)
+
+        if (a > 10+20) -> if (a > 30)，因為算數運算優先
+
+        if 敘述句....用於流程控制
+        if (條件)
+        {
+        }
+        // if 二擇一敘述
+        if(條件)
+        {
+            //TODO
+        }
+        else
+        {
+            //TODO
+        }
+        // if 多擇一
+        if(條件/比較運算)
+        {
+            //TODO
+        }
+        else if(條件二)
+        {
+            //TODO
+        }
+        else
+        {
+            //TODO
+        }
+        */
+        var s = 60;
+        if (s < 60)
+        {
+            document.write("s 的值小於60!!");
+        }
+        else if (s > 60)
+        {
+            document.write("s 的值大於60!!");
+        }
+        else
+        {
+            document.write("s 的值等於60!!");
+        }
+
+        if (s <= 60)
+        {
+            document.write("s 的值小於等於60!!");
+        }
+
+        if (s >= 60)
+        {
+            document.write("s 的值大於等於60!!");
+        }
+        document.write("程式到此結束!");
+        document.write("<hr>");
+        ////////////////////////////////////////////////////////////////////
+        /* payType :
+        1: 信用卡付款
+        2: 現金付款
+        3: 轉帳付款
+        4: LINE PAY付款
+        5: 貨到付款
+        */
+        var payType = 99;
+        
+        if (payType > 5 || payType < 1)
+            document.write("請你輸入1~5的整數數字");
+
+        // document.write("<br>");
+
+        else if (payType == 1)
+            document.write("信用卡付款");
+        else if (payType == 2)
+            document.write("現金付款");
+        else if (payType == 3)
+            document.write("轉帳付款");
+        else if (payType == 4)
+            document.write("LINE PAY付款");
+        else if (payType == 5)
+            document.write("貨到付款");
+/*         else
+            document.write("請你輸入1~5的數字"); */
+        var score = 66;
+    // score 90+ 優等 80~89 甲等
+        var showStr = "優等";
+        if (score > 100 || score < 0)
+            showStr = "請輸入0~100的數字";
+        else if (score >= 90)
+            showStr = "優等";
+        else if (score >= 80)
+            showStr = "甲等";
+        else if (score >= 70)
+            showStr = "乙等";
+        else if (score >= 60)
+            showStr = "丙等";
+        else
+            showStr = "丁等";
+        
+
+        document.write("<br>");
+        document.write(showStr);
+        
+    </script>
+
+
+
+</body>
+</html>
