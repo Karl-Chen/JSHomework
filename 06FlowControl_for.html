@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome my homepage</h1>
+    <script>
+        // 一鍵標齊 alt+shift+f
+        // 迴圈(loop)敘述，計數器
+        // for 敘述 for (條件初始; 執行條件; 條件值變化)
+        for (var i = 1; i < 7; i++) {
+            // document.write("<h1>Welcome my homepage!! " + i + "</h1>");
+            document.write("<h" + i + ">Welcome my homepage!! " + i + "</h" + i + ">");
+        }
+        // for (var j = 0; j < 100; j++) {
+        //     for (var i = 6; i > 0; i--) {
+        //         // document.write("<h1>Welcome my homepage!! " + i + "</h1>");
+        //         document.write("<h" + i + ">Welcome my homepage!! " + j + "</h" + i + ">");
+        //     }
+        // }
+
+        // 題目
+        // 計算1加到1000的總和
+        // 1+2+3+.....+1000
+        var ret = 0;
+        for (var i = 1; i <= 1000; i++)
+        {
+            ret+=i;
+        }
+        document.write("1+~+1000的總和 = ", ret);
+        document.write("<br>");
+        // 題目
+        // 計算1加到1000的奇數總和
+        // 1+3+.....+999
+        ret = 0;
+        for (var i = 1; i <= 1000; i+=2)
+        {
+            ret+=i;
+        }
+        document.write("1+~+1000的奇數總和 = ", ret);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /////////////////////////////////////////////////
+        // 雞腿同籠
+        // 已知雞兔共35隻，雞兔的腳共94支，請問籠子裡雞兔各有幾隻?
+        // 假設i隻雞，35-i隻兔子
+        var ret = 0;
+        for (var i = 0; i <= 35; i++) {
+            if (i * 2 + (35 - i) * 4 == 94) {
+                ret = i;
+                break;
+            }
+        }
+        // %%%%% document.write(裡面要做四則運算要用()括起來);
+        // javascript ===是把數字跟字串做區隔，例：if (1 == "1")，這樣會成立，要判斷成不成立要用if (1 === "1")這樣就不成立
+        document.write("共有雞" + ret + "隻, 兔子" + (35 - ret) + "隻");
+        document.write("<br>");
+
+    </script>
+</body>
+
+</html>
