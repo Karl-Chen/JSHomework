@@ -23,7 +23,94 @@
         // %%%%% document.write(裡面要做四則運算要用()括起來);
         // javascript ===是把數字跟字串做區隔，例：if (1 == "1")，這樣會成立，要判斷成不成立要用if (1 === "1")這樣就不成立
         document.write("共有雞" + ret + "隻, 兔子" + (35 - ret) + "隻");
-        document.write("<br>");
+        document.write("<hr>");
+
+        // 費氏數列
+        // 1,1,2,3,5,8,13,21,34,55,89
+        // n = n-1 + n-2
+        // 寫一個程式能找出第k個數在數列上的哪一個數字
+        // 結果算到第81個n1 = 80, n2 = 79就失真了
+        // var n1 = 1, n2 = 1, v = 0, tmp = 0;
+        // var n = parseInt(prompt("請輸入您要找費氏數列的第幾佪值"));
+        // for (var k = 3; k <= n; k++)
+        // {
+        //     v = n1 + n2;
+        //     tmp = n2;
+        //     n2 = n1;
+        //     n1 = v;
+            
+        // }
+        // document.write("第"+ n +"個費氏數列的數字為 " + v + ", n1 = " + n2 + ", n2 = " + tmp);
+
+        // 遞迴的寫法？
+        // var loop(n)
+        // {
+        //     if (n < 1)
+        //         return 0;
+        //     else if (n < 3)
+        //         return 1;
+        //     return loop(n - 1) + loop(n - 2);
+        // }
+        document.write("<hr>");
+        var p = parseInt(prompt("請問要畫幾排"));
+        /* for (var i = 0; i < p; i++)
+        {
+            for (var j = 0; j <= i; j++)
+            {
+                document.write("*");
+            }
+            document.write("<br>");
+        } */
+        //延伸變化題
+/*         for (var i = 0; i < p; i++)
+        {
+            for (var j = 0; j < p - i - 1; j++)
+            {
+                document.write("&nbsp;&nbsp;");
+            }
+            for (var j = 0; j < 2 * i + 1; j++)
+            {
+                document.write("*");
+            }
+            document.write("<br>");
+        } */
+
+        ///////////// 不使用巢狀迴圈，將*存進str裡面，不用再重新累計
+        var str = "";
+        for (var i = 0; i < p; i++)
+        {
+            str += "*";
+            document.write(str);
+            document.write("<br>");
+        }
+        document.write("<hr>");
+
+        //不使用巢狀結構實作
+        var str1 = "";
+        for (var i = 0; i < p - 1; i++)
+            str1 += "&nbsp;&nbsp;";
+        str = "*"
+        for (var i = 0; i < p; i++)
+        {
+            //str += "*";
+            document.write(str1);
+            document.write(str);
+            str+="**";
+            str1 = str1.slice(0,-12);
+            document.write("<br>");
+        }
+        document.write("<hr>");
+        
+        // 九九乘法表
+        for (var i = 1; i < 10; i++)
+        {
+            for (var j = 1; j < 10; j++)
+            {
+                document.write(i + "x" + j + "=" + (i * j) + "<br>");
+            }
+            document.write("<br>");
+        }
+
 
     </script>
 </body>
