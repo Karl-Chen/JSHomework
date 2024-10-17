@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="button" value="執行功能1" onclick="ShowWelcome('歡迎光臨')">
+    <input type="button" value="執行功能2" onclick="ShowLevelList()">
+    <input type="button" value="執行功能3" onclick="inputStudentNum()">
+    <script>
+        // 事件驅動式
+        // 結構化程式設計
+        // 講解重點：將各功能函數化，函數不用管位置，都能call得到，不用先寫function再call function
+
+        var arrStudentNo = ["S001", "S002", "S003", "S004", "S005", "S006", "S007", "S008", "S009", "S0010"];
+        var arrStudentName = ["王小明", "王大明", "王中明", "王右明", "王左明", "王上明", "王下明", "張三", "李四", "王五"];
+        var arrStudentScore = [92, 87, 56, 68, 85, 83, 77, 71, 85, 93];
+        var arrRange = ["丁等", "丁等", "丁等", "丁等", "丁等", "丁等", "丙等", "乙等", "甲等", "優等", "優等"];
+
+        // var str = ShowWelcome("歡迎光臨");
+        // document.write("<hr>");
+        // ShowStundentData(9);
+        // document.write("<hr>");
+        // ShowLevelList();
+        // function1 顯示歡迎光臨
+        function ShowWelcome(str) {
+            document.write(str);
+            return str;
+        }
+
+        function inputStudentNum()
+        {
+            var num = prompt("請輸入要查詢學生的編號");
+            var index = 1;
+            if (parseInt(num) > 0)
+                index = parseInt(num);
+            ShowStundentData(index - 1);
+        }
+
+
+        // function2 等第判斷
+        function ShowLevelList()
+        {
+            for (var i in arrStudentNo) {
+                // var intPointRange = parseInt(arrStudentScore[i] / 10);
+                // var strRange = arrRange[intPointRange];
+                // document.write(`${arrStudentNo[i]}-${arrStudentName[i]}-${strRange}<br>`);
+                ShowStundentData(i);
+            }
+        }
+        // 取得某位學生等第資料
+        function ShowStundentData(index, intPointRange = 0)
+        {
+            var intPointRange = parseInt(arrStudentScore[index] / 10);
+            var strRange = arrRange[intPointRange];
+            document.write(`${arrStudentNo[index]}-${arrStudentName[index]}-${strRange}<br>`);
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

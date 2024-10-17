@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span style="color: violet;"></span>
+    <script>
+        // 陣列（Array)
+        // 一種資料結構
+        // 陣列長度 length    --(不是函式，而是變數)
+
+        var rainbow = ["紅", "橙", "黃", "綠", "藍", "靛", "紫"];
+        var raincolor = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+        document.write(`${rainbow}<hr>`);
+        rainbow.push("黑");
+        raincolor.push("black");
+        for (var i = 0; i < rainbow.length; i++)
+            document.write(`<span style="color: ${raincolor[i]};">${rainbow[i]}</span>`);
+        document.write("<hr>");
+
+        // 拜訪迴圈，用於拜訪集合資料的for迴圈
+        // for (var i in ...) 其中i是索引值，而且非常智障的是i是string，至於為什麼可以用rainbow[i]，因為這裡JS自己把i轉型成int了（真的是瘋了）
+        // for (var item of rainbow) item就是rainbow的項目了
+        for (var i in rainbow) {
+            document.write(`<span style="color: ${raincolor[i]};">${rainbow[i]}</span>`);
+        }
+        document.write("<br>");
+        for (var item of rainbow) {
+            document.write(item);
+        }
+        document.write("<br>");
+        // 實例應用
+        // array的值域及型態跟屬性都要一樣，同一個DataSet
+        /*
+        部門代碼    部門名稱
+            01      資訊部
+            02      管理部
+            03      行銷部
+            04      企劃部
+            05      人事處
+            06      研發處
+        */
+        var deptData = [["01", "資訊部"], ["02", "管理部"], ["03", "行銷部"], ["04", "企劃部"], ["05", "人事處"], ["06", "研發處"]];
+        var deptNo = ["01", "02", "03", "04", "05", "06"];//同一值域
+        var deptName = ["資訊部", "管理部", "行銷部", "企劃部", "人事處", "研發處"];
+
+        for (var i in deptNo)
+        {
+            document.write(`${deptNo[i]}-${deptName[i]}<br>`);
+            //document.write(`${deptData[i][0]}-${deptData[i][1]}<br>`);
+        }
+        for (var it of deptData)
+        {
+            document.write(`${it[0]}-${it[1]}<br>`);
+        }
+
+
+    </script>
+</body>
+
+</html>

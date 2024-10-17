@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div id="mytimer">
+
+    </div>
+
+    <div>
+        X:<input type="text" id="X" readonly>
+        Y:<input type="text" id="Y" readonly>
+    </div>
+
+
+    <script>
+        var textdiv = document.getElementById("mytimer");
+        getLocalTime();
+        function getLocalTime() {
+            var timer = new Date();
+            textdiv.innerText = timer;
+            setTimeout(getLocalTime, 500);
+        }
+
+        var textX = document.getElementById("X");
+        var textY = document.getElementById("Y");
+
+        // evt就是事件物件，對物件做動作時會產生事件
+        function ShowMousePoint(evt)
+        {
+            textX.value = evt.pageX;
+            textY.value = evt.pageY;
+        }
+
+        document.addEventListener("mousemove", ShowMousePoint);
+
+
+    </script>
+</body>
+
+</html>

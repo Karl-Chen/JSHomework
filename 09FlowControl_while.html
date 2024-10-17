@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //迴圈(loop)
+        // while 敘述 while(條件)
+        // {TODO：}
+        // 用在不知道要做幾次，只看條件是否成立，條件成立就跑到不成立為止
+        var a = 1;
+        while(a <= 6)
+        {
+            document.write("<h" + a + " style='color:red'> Wellcome My Homepage!!</h" + a +">");
+            a++;
+        }
+
+        // 字串的串接ES6語法
+        var i = 1;
+        while(i <= 6)
+        {
+            document.write(`<h${i} style="color:red;background-color:yellow"> Wellcome My Homepage!!</h${i}>`);
+            i++;
+        }
+
+        // 用while算1+1000的總和
+        var ret = 0;
+        var j = 1;
+        while(j <= 1000)
+        {
+            ret+=j;
+            j++;
+        }
+        document.write(`1加到1000的總和為：${ret}<br>`);
+        // 畫星星
+        var str = "";
+        var p = parseInt(prompt("請問要畫幾排"));
+        j = 1;
+        while(j <= p)
+        {
+            str+="*";
+            document.write(`${str}<br>`);
+            j++;
+        }
+        // 雞兔同籠
+        // 已知雞兔共35隻，雞兔的腳共94支，請問籠子裡雞兔各有幾隻?
+        var x = 0;
+        while(x <= 35)
+        {
+            if (((x * 2) + (35 - x) * 4) == 94)
+            {
+                document.write(`雞有${x}隻, 兔有${(35-x)}隻<br>`);
+                break;
+            }
+            x++;
+        }
+
+        x = 0;
+        while(((x * 2) + (35 - x) * 4) != 94 && x <= 35)
+        {
+            x++;
+        }
+        document.write(`雞有${x}隻, 兔有${(35-x)}隻<br>`);
+
+    </script>
+    
+</body>
+</html>
